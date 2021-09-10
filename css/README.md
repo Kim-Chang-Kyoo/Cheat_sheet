@@ -94,3 +94,36 @@ display: block inline inline-block none
 float: left right none / clear: left right both
 
 position: static relative absolute fixed / left right top bottom
+
+
+
+background 관련, 그라데이션
+
+
+
+css선택자
+
+-연결선택자: 하위선택자 자식선택자 인접형제 형제
+
+-속성선택자
+
+-가상클래스
+
+-가상요소
+
+
+
+transform
+
+transition-애니메이션효과
+
+@keyframes
+
+
+
+뷰포트
+
+미디어쿼리
+
+플렉스박스 레이아웃 vs CSS그리드 레이아웃
+
