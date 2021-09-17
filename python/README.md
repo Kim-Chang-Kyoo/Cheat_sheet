@@ -23,7 +23,7 @@ swea 4871번 스택
 
 
 시간복잡도-빅오표기법
-	1초에3~5억번연산?
+	1초에3~5억번연산? / 파이썬은 1초에 2천만번
 	1
 	logN
 	N 1천만이하
@@ -39,6 +39,9 @@ swea 4871번 스택
 공간복잡도 - 변수의개수
 
 ​	512MB == 1.2억개의 int 변수 생성가능 // int 1개는 4바이트
+
+​	리스트길이1백만 -> 4MB
+
 ​	정수 자료형의 범위
 ​		integer 오버플로우
 ​	실수 자료형의 범위
@@ -136,6 +139,10 @@ string.punctuation
 
 set
 
+
+
+string.replace(a, b)
+
 file
 ==============================
 ==============================
@@ -173,6 +180,133 @@ file
 
 
 ==============================
+
+실수형은 오차발생
+round(123.457, 2) 123.46
+
+a = [i for i in range(20) if i%2==1]
+a = [[0]*m for _ in range(n)]
+리스트copy조심
+
+문자열은수정불가
+
+튜플
+	수정불가
+	()
+	리스트보다 공간효율적
+
+딕셔너리
+
+집합
+	순서x
+	중복x
+	set()
+	{}
+	| &
+	add update remove
+------------------------------------------------
+import sys
+data = sys.stdin.readline().rstrip()
+
+print(+ , end=' ')
+f"{}"
+
+result = True if score >= 80 else False
+
+파라미터 사용법
+
+예외처리
+
+global 바깥변수 수정하려면 가져오기 / 그냥읽기만할때는global없어도된다
+전역변수의 내부메소드는 그냥사용가능
+
+(lambda a, b: a + b)(3, 7)
+sorted(array, key=lambda x: x[1])
+result = map(lambda a,b: a+b, list1, list2)
+
+
+heapq
+bisect
+collections
+math
+eval('(3+5)*7')
+sorted(reverse=True, key=)
+
+itertools 순열 조합
+from itertools import permutations
+data = ['a', 'b', 'c']
+result = list(permutations(data, 3))
+
+from itertools import combinations
+result = list(combinations(data, 2))
+
+from itertools import product #중복순열
+result = list(product(data, repeat=2))
+
+from itertools import combinations_with_replacement #중복조합
+result = list(combinations_with_replacement(data, 2))
+
+from collections import Counter
+counter = Counter(['a', 'a' ,'a' ,'b' ,'b'])
+print(counter['blue'])
+print(dict(counter))
+
+import math
+math.gcd(21, 14)
+
+
+
+
+
+
+
+
+
+
+
+일단그리디실행하기
+최적의해인지판단하기
+
+구현-시뮬레이션과 완전탐색
+풀이는쉽지만 소스코드로옮기기어려운문제
+알고리즘은쉬운데 코드가길어지는문제
+문자열다루는문제
+2차원행렬
+
+
+
+
+
+
+
+
+
+
+
+그래프 탐색 알고리즘
+
+스택자료구조 stack[::-1]
+
+큐자료구조 시간복잡도때문에 라이브러리써라
+from collections import deque
+queue = deque()
+queue.append(1)
+queue.popleft()
+queue.reverse()
+
+재귀함수-자신을호출하는함수 / 스택 / 깊이제한
+종료조건
+
+팩토리얼구현-반복으로구현, 재귀로구현
+유클리드호제법 최대공약수계산
+
+DFS-방문처리, 스택
+그래프자료구조-2차원리스트로표현
+방문리스트
+
+BFS-방문처리 큐
+
+------------------------------------------------
 
 ```python
 numbers = [5, 4, 3, 2, 1]

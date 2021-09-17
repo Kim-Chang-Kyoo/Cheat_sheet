@@ -127,3 +127,26 @@ transition-애니메이션효과
 
 플렉스박스 레이아웃 vs CSS그리드 레이아웃
 
+-------------------
+
+flex
+
+/* 많이하는실수 */
+/* 부모의 높이가 있어야 세로 가운데 정렬할 수 있다 */
+/* 플렉스 안된다면 부모를 항상 생각해라 */
+
+
+align-content: center; // 윗줄과 아랫줄사이간격 조절하기
+--------------
+grid - flex의단점보완
+
+dsplay: grid;
+grid-template-areas: ;
+--------------------
+node.js설치해야 SCSS사용가능
+
+컴파일해서 일반 css로 만들기
+sass scss / stylus less / gulp
+nesting
+mixins
+extends
