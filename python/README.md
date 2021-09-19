@@ -306,6 +306,19 @@ DFS-방문처리, 스택
 
 BFS-방문처리 큐
 
+
+
+
+
+시간복잡도
+자료구조 / 리스트 셋 딕셔너리 튜플 스택 큐 트리 그래프
+출제의도, 알고리즘
+실수형 오차 / 실수형출력 / 소수점자리수 format(?, '.3f')
+sys.stdin.readline() / sys.stdin.readline().rstrip()
+f-string / print(end sep , +)
+try except exit()
+긴배열을미리만들어놓고 개수세기
+
 ------------------------------------------------
 
 ```python
