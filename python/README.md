@@ -298,6 +298,14 @@ queue.append(1)
 queue.popleft()
 queue.reverse()
 
+
+
+cards = deque([i for i in range(1, N+1)])
+
+deque사용법공부하기
+
+
+
 재귀함수-자신을호출하는함수 / 스택 / 깊이제한
 종료조건
 
