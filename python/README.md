@@ -279,7 +279,7 @@ queue.reverse()
 
 cards = deque([i for i in range(1, N+1)])
 
-deque사용법공부하기
+deque사용법공부하기 / deque() vs deque([])
 
 queue = deque([1, 2, 3], 3) / literal, maxlen
 
@@ -323,6 +323,15 @@ try except exit()
 긴배열을미리만들어놓고 개수세기
 
 N이 크다면 그냥 반복문 한번으로 하는 방법 생각해라
+
+
+
+
+
+시간초과 줄이기
+
+- import sys
+- from collections import deque
 
 ------------------------------------------------
 
