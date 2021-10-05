@@ -25,6 +25,8 @@
 자료복사 조심해라
 	값을복사 vs 주소를복사
 
+참조형은 global 안써도 된다
+
 ====================
 
 배열 발상의전환
@@ -340,12 +342,20 @@ N이 크다면 그냥 반복문 한번으로 하는 방법 생각해라
 
 모든 재귀는 반복문으로 풀 수 있다
 
+조기 리턴
+
+꼬리 재귀 - 함수만 리턴하기 / 지원 가능한 언어인지 확인해라
+
 스택메모리 제한 해제하는 법 알아둬라
 
 1. 귀납적사고하기 / k+1
 2. 종료조건 생각하기 - 함수를호출x, 수렴하는조건
 3. 함수의 인자, 리턴
 4. 재귀식 - 분기해서 처리하기
+
+
+
+하노이의 탑 해법공식
 
 
 
@@ -371,5 +381,145 @@ def bubble_sort(numbers):
     return numbers
 
 print(bubble_sort(numbers))
+```
+
+```python
+# 전체 경우의 수 - 트리로 생각해라 / 노드와 엣지 모두 의미가 있다
+'''
+def solution(remain, seated):
+    global count
+
+    if remain < 0:
+        return
+    if remain == 0:
+        count += 1
+        return
+
+    for i in range(seated, max_value+1):
+        solution(remain-i, i)
+
+
+n = int(input())
+min_value = 2
+max_value = 10
+count = 0
+
+solution(n, min_value)
+
+print(count)
+'''
+
+'''
+def solution(remain, seated):
+    key = str((remain, seated))
+
+    if remain < 0:
+        return 0
+    if remain == 0:
+        return 1
+
+    count = 0
+    for i in range(seated, max_value+1):
+        count += solution(remain-i, i)
+    return count
+
+
+n = int(input())
+min_value = 2
+max_value = 10
+
+print(solution(n, min_value))
+'''
+
+'''
+def solution(remain, seated):
+    key = str((remain, seated))
+    if key in memo:
+        return memo[key]
+
+    if remain < 0:
+        return 0
+    if remain == 0:
+        return 1
+
+    count = 0
+    for i in range(seated, max_value+1):
+        count += solution(remain-i, i)
+
+    memo[key] = count
+    
+    return count
+
+
+n = int(input())
+min_value = 2
+max_value = 10
+memo = {}
+
+print(solution(n, min_value))
+'''
+#########################################
+'''
+n = int(input())
+
+count = 0
+for rock in range(0, n+1):
+    remain = n - rock
+
+    for cissor in range(0, remain+1):
+        paper = remain - cissor
+
+        temp_list = [rock, cissor, paper]
+        if temp_list.count(max(temp_list)) == 1:
+            count += 1
+
+print(count)
+'''
+##########################################
+'''
+n = int(input())
+lights = [6, 2, 5, 5, 4, 5, 6, 3, 7, 6]
+
+def count_light(number):
+    output = 0
+    for i in '{:02}'.format(number):
+        output += lights[int(i)]
+    return output
+
+count = 0
+for h in range(24):
+    for m in range(60):
+        for s in range(60):
+            if count_light(h) + count_light(m) + count_light(s) == n:
+                count += 1
+
+print(count)
+'''
+
+n = int(input())
+lights = [6, 2, 5, 5, 4, 5, 6, 3, 7, 6]
+memo = {}
+
+def count_light(number):
+    if number in memo:
+        return memo[number]
+    
+    output = 0
+    for i in '{:02}'.format(number):
+        output += lights[int(i)]
+
+    memo[number] = output
+    
+    return output
+
+count = 0
+for h in range(24):
+    for m in range(60):
+        for s in range(60):
+            if count_light(h) + count_light(m) + count_light(s) == n:
+                count += 1
+
+print(count)
+
 ```
 
