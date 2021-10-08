@@ -396,8 +396,21 @@ def bubble_sort(numbers):
                 numbers[j] = temp
             print(j, i)
     return numbers
-
 print(bubble_sort(numbers))
+
+for i in range(0, len(a)):
+    for j in range(0, len(a)-1-i):
+        if a[j] > a[j+1]:
+            a[j], a[j+1] = a[j+1], a[j]
+print(a)
+
+for i in range(len(a)-1, 0, -1):
+    max_index = 0
+    for j in range(1, i+1):
+        if a[max_index] < a[j]:
+            max_index = j
+    a[max_index], a[i] = a[i], a[max_index]
+print(a)
 ```
 
 ```python
