@@ -1,4 +1,4 @@
-# CSS
+# CSS [작성중]
 
 선택자 속성 값
 
@@ -127,22 +127,61 @@ transition-애니메이션효과
 
 플렉스박스 레이아웃 vs CSS그리드 레이아웃
 
--------------------
+--------------------------------------------------------
 
-flex
+많이하는실수
 
-/* 많이하는실수 */
-/* 부모의 높이가 있어야 세로 가운데 정렬할 수 있다 */
-/* 플렉스 안된다면 부모를 항상 생각해라 */
+부모의 높이가 있어야 세로 가운데 정렬할 수 있다
 
+크기가 있어야 정렬할 수 있따
+
+
+
+css선택자
+
+display: block;
+display: inline-block;
+display: inline;
+
+inline vs block
+텍스트
+너비x
+높이x
+
+-------------------------------------------
+
+flexbox 부모에적용
+
+.father {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center; // 부모가차지하는높이에서가운데정렬
+			// stretch는 높이가 없어야 적용된다
+	flex-wrap: nowrap; // 한줄에유지
+	align-content: center;
+}
+
+.child:nth-child(2) {
+	align-self: center;
+	order: 1; //클수록 뒤로 간다 zerobase
+	flex-shrink: 2; // 2배로줄어든다
+	flex-basis: 300px; //기본사이즈가300이고 늘리거나줄이면바뀐다
+}
+
+-------------------------------------------------------------
 
 align-content: center; // 윗줄과 아랫줄사이간격 조절하기
---------------
 grid - flex의단점보완
-
 dsplay: grid;
 grid-template-areas: ;
---------------------
+
+
+
+
+
+-------------------------------------------------------------
+
 node.js설치해야 SCSS사용가능
 
 컴파일해서 일반 css로 만들기
