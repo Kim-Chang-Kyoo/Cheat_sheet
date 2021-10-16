@@ -1,5 +1,67 @@
 # JavaScript [작성중]
 
+
+
+
+
+mdn참고해라
+<script src='main.js'></script> //head에넣으려면 async defer써라
+'use strict'
+ES6
+카멜케이스
+
+
+
+let
+const
+var
+typeof
+
+primitive, single item : number string boolean null undefined symbol / infinity -intifnity NaN
+object, box container
+function, first-class function(변수로할당가능)
+
+mutable vs immutable
+dynamic typing 자동형변환
+
+
+
+|| && !
+== vs ===
+
+if () {
+} else if () {
+} else {
+}
+
+name === 'a' ? 'yes' : 'no'
+
+switch () {
+	case 'a':
+		break
+	case 'b':
+	case 'c':
+		break
+	default:
+		break
+}
+
+while () {
+}
+
+do {
+
+} while ();
+
+for (let i=3; i>0; i=i-2) {
+	continue
+	break
+}
+
+
+
+-----------------------------------------------------------------------------
+
 [momentum]
 
 open with live server 에러해결하는방법
@@ -346,16 +408,32 @@ mdn에서 canvas 알아보기
 
 [zoom]
 
-백엔드 설치
-npm init -y //프로젝트 이름 조심
-npm install nodemon -D
-babel.config.json
-nodemon.json
-src/server.js
-npm install @babel/core @babel/cli @babel/node @babel/preset-env -D
-.gitignore
-npm install express
-npm insall pug
-npm run dev
 
-프론트엔드 설치
+
+zoom폴더만들기
+npm init -y //프로젝트이름조심
+
+백엔드
+package.json수정하기
+README만들기
+npm install nodemon -D
+babel.config.json만들기
+nodemon.json만들기
+src/server.js만들기
+npm install @bable/core @babel/cli @babel/node @babel/preset-env -D
+.gitignore만들기 /node_moules추가
+nodemon수정하기
+babel.config.json수정하기
+package.json 수정
+npm install express
+npm install pug //git commit해야함
+server.js수정하기
+npm run dev
+localhost:3000 작동확인하기
+
+프론트엔드
+src/public/js/app.js 만들기
+src/views/home.pug만들기
+server.js에 pug입력
+
+nodemon -> babel -> server.js -> home.pug
