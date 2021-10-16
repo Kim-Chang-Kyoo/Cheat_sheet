@@ -178,14 +178,234 @@ grid-template-areas: ;
 
 
 
+.father {
+	display: grid;
+	grid-template-columns: 20px 20px 20px;
+	grid-templa-rows: 20px, 20px, 20px; // 행크기없으면 자식의 font-size가 행크기다
+	column-gap: 10px;
+	row-gap: 10px;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: 20px 20px 20px 20px; // repeat(4, 20px);
+	grid-template-rows: 20px 20px 20px 20px; // auto 20px;
+	grid-template-areas:
+	"header header header header"
+	"content content content nav"
+	"content content content nav"
+	"footer footer footer footer"; //자식에 grid-area: header;
+}
+
+.header {
+	grid-column-start: 1;
+	grid-column-end: 5; // 라인 단위
+}
+
+.header {
+	grid-column: 1 / -1;
+}
+
+.header {
+	grid-column: span 4; // 셀단위
+}
+
+
+
+
+
+
+
+
+
+line naming
+
+.grid {
+	height: 50vh;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr; // fraction단위
+}
+
+.grid {
+	display: grid;
+	grid-template-areas:
+	"header header header header" 1fr
+	"content content content nav" 2fr
+	[footer-start] "footer footer footer footer" 1fr [footer-end] / 1fr 1fr 1fr 1fr;
+}
+
+justify-items: start;
+align-items: start;
+place-items: start start;
+
+justify-content: start;
+align-content: start;
+place-content: start start;
+
+justify-self: center;
+align-self: start;
+place-self: start;
+
+
+
+
+
+.grid {
+	grid-template-rows: repeat(4, 100px);
+	grid-template-columns: repeat(4, 100px);
+	grid-auto-rows: 100px;
+	grid-auto-columns: 100px;
+	grid-auto-flow: column; // 아래로 자동생성이아니라, 옆으로 자동생성
+	grid-auto-columns: 100px;
+}
+
+.grid {
+	grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); // stretch 빈공간을만들지않는다
+}
+
+.grid {
+	grid-template-columns: max-content min-content;
+	grid-template-columns: repeat(auto-fit, minmax(max-content, 1fr))
+}
+
 
 
 -------------------------------------------------------------
 
 node.js설치해야 SCSS사용가능
 
-컴파일해서 일반 css로 만들기
-sass scss / stylus less / gulp
-nesting
-mixins
-extends
+scss sass stylus less // css컴파일러 일반css로바꿔준다
+scss->gulp->css
+
+gulpfile.babel.js // node.js패키지 다운받기
+dist폴더에 컴파일된css가 저장된다
+npm install
+npm run dev
+
+
+
+
+
+src/scss/_variables.scss //변수파일 언더바있으면css로컴파일안된다
+$bg: red;
+
+src/scss/styles.scss
+@import '_variables';
+body {
+	background: $bg;
+}
+
+
+
+.box {
+	&:hover {
+		background-color: green;
+	}
+	h2 {
+		color: blue;
+	}
+	button {
+		color: red;
+	}
+}
+
+
+
+
+
+
+
+src/scss/_mixins.scss
+@mixin sexyTitle {
+	color: blue;
+	font-size: 30px;
+	margin-bottom: 12px;
+}
+
+src/scss/styles.scss
+@import '_mixins';
+h1 {
+	@include sexyTitle();
+}
+
+@mixin link($color) {
+	text-decoration: none;
+	display: block;
+	color: $color;
+}
+
+a {
+	&:nth-child(odd) {
+		@include link(blue);
+	}
+}
+
+@mixin link($word) {
+	text-decoration: none;
+	display: block;
+	@if $word == 'odd' {
+		color: blue;
+	} @else {
+		color: red;
+	}
+}
+a {
+	&:nth-child(odd) {
+		@include link(odd);
+	}
+}
+
+
+
+
+
+
+
+src/scss/_buttons.scss
+%button {
+	border-radius: 7px;
+	font-size: 12px;
+	text-transform: uppercase;
+	padding: 5px 10px;
+}
+
+src/scss/styles.scss
+@import '_buttons';
+a {
+	@extend %button;
+}
+
+button {
+	@extend %button;
+}
+
+
+
+
+
+src/scss/_mixins.scss
+@mixin responsive($device) {
+	@if $device == 'iphone' {
+		@media screen and (min-width: 500px) and (max-width: 690px) {
+			@content
+		}
+} @else if $device == 'tablet' {
+
+} @else if $device == 'iphone-l' {
+
+} @else if $device == 'ipad-l' {
+
+}
+}
+
+@import '_mixins'
+h1 {
+	color: red;
+	@include responsive('iphone') {
+		color: yellow;
+	}
+	@include responsive('iphon-l') {
+		font-size: 60px;
+	}
+}
