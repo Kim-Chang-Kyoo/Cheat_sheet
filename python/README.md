@@ -4,6 +4,36 @@
 
 
 
+출제의도 자료구조 알고리즘
+쉽게생각하기 vs 구현하기
+엣지케이스
+0나누기조심
+시간복잡도-1초에2000만번
+	from collections import deque
+import sys
+input = sys.stdin.readline
+
+파이썬 fstring
+람다
+	max(queue, key=lambda x: x[1])
+Zip Enumerate
+	for pair in zip(numbers, letters)
+	프린터
+itertools
+	소수찾기
+	per += list(permutations(numbers, i))
+
+
+n진법함수
+	int()
+소수 – 루트까지만 확인하기
+제곱근판별법
+	math.sqrt(n).is_integer()
+
+
+
+
+
 알고리즘+자료구조 / 문제해결능력(출제의도파악 이론찾기) / 구현능력(다른사람코드빨리흡수)
 
 
