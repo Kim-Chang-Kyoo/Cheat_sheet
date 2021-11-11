@@ -2,6 +2,166 @@
 
 
 
+
+
+자바스크립트 클래스
+constructor({ $target, setPlayers }) {
+    this.$target = $target;
+    this.$input = this.$target.querySelector(`#${ID.CAR_NAMES_INPUT}`);
+}
+
+userInputNumbers = Array.from(userInputNumbers).map((num) => parseInt(num));
+
+export default BaseballGame
+
+const strike = target.filter((num, i) => num === inputs[i]).length;
+forEach
+map
+
+return result ? result : MESSAGE.NOTHING;
+
+const result = new Set();
+
+return [...result];
+
+bind()
+
+try{} catch{}
+JSON.parse()
+JSON.stringfy()
+
+
+
+동적웹사이트를만들고싶어 script언어
+1. 넷스케이프 네비게이터 브라우저 + JavaScript
+2. MS 익스플로러 + Jscript
+ECMA스크립트 협의
+3. 모질라의 파이어폭스 + ActionScript
+4. 구글의 크롬
+ECMA스크립트5 2009
+ECMA스크립트6 2015
+
+브라우저마다 자바스크립트 엔진이 다르다
+BABEL - 자바스크립트 컴파일러
+SPA - 페이지 일부분만 업데이트하기 -> 뷰 리액트 앵귤러
+MDN 참고해라
+입력 -> 연산 -> 출력
+유효성검사 중요하다
+다이나믹 타이핑 - 변수가 바뀐다
+객체내용물은 수정가능
+mutable(all, objects) vs immutable(primitive, frozen objects)
+
+script를 head에 넣을지 body에넣을지
+async vs defer
+head에 defer넣어라
+'use strict';
+let const var / hoisting / block {}
+early return, early exit
+
+primive type - number(Infinity -Infinity NaN bigInt) string boolean null undefined symbol
+object type - const a = {name: "aa", age: 20};
+function - first class function
+
+`${a}`
+typeof a
+a.charAt(0)
+console.log('1' + 2)
+console.log(2 ** 3)
+const b = ++a // 더하고 할당
+const b = a++ // 할당하고 더하기
+|| && ! // simple한것을 앞에 조건으로두고 무거운조건을뒤로보내기
+== vs ===
+console.log(0 === false)
+
+if () {
+
+} else if () {
+
+} else {
+
+}
+console.log(name === 'elie' ? 'yes' : 'no')
+
+switch (browswer) {
+	case 'IE':
+		console.log('a');
+		break;
+	case 'chrome':
+	case 'firefox':
+		console.log('b');
+		break;
+	default:
+		console.log('c'):
+		break;
+}
+
+let i = 3;
+while (i > 0) {
+	console.log(i);
+	i--;
+}
+
+do {
+	console.log('i');
+	i--;
+} while (i > 0);
+
+for (i = 3; i > 0; i--) {
+	console.log(i);
+}
+
+function a (a, b='unknown') {
+	console.log(a);
+}
+
+function a (...args) {
+	for (let i = 0; i < args.length; i++) {
+		console.log(args[i]);
+	}
+	
+	for (const arg of args) {
+		console.log(arg);
+	}
+	
+	args.forEach((arg) => console.log(arg));
+}
+a('1', '2', '3')
+----------------------------------------------------
+1등급함수-할당, 인자, 리턴값
+
+익명함수
+const print = function () {
+};
+print();
+
+콜백함수-함수에서다른함수호출하기
+function a (answer, yes, no) {
+	if (answer === 'a') {
+		yes()
+	} else {
+		no()
+	}
+}
+
+기명함수
+const a = function a() {
+	a();
+}
+
+화살표함수
+const a = (b, c) => return b+c;
+
+즉시호출
+(function a () {
+	console.log('a');
+})();
+
+
+
+
+
+
+
 -----------------------------------------------------------------------------
 
 [momentum]
